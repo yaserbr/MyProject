@@ -1,23 +1,27 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TMPro; // إذا تستخدم TextMeshPro
+using TMPro;
+using System.Collections;
 
 
 
 public class GameModeHandler : MonoBehaviour
 {
     public GameObject missionUI;
-    public TMP_Text missionTimerText; // استخدم Text إذا ما تستخدم TextMeshPro
-    public float missionTime = 20f;
+    public TMP_Text missionTimerText; 
+    public float missionTime = 10f;
 
     public GameObject victoryCanvas;
 
     public AudioSource clapAudio;
 
+    private bool hasWon = false;
+
     void Start()
     {
-        // ضبط الإعدادات حسب المود
+        Debug.Log("✅ GameModeHandler Started");
+
         switch (GameModeManager.SelectedMode)
         {
             case GameModeManager.GameMode.Easy:
@@ -34,7 +38,7 @@ public class GameModeHandler : MonoBehaviour
 
     void Update()
     {
-        // تشغيل العداد في وضع المهمة فقط
+        
         if (GameModeManager.SelectedMode == GameModeManager.GameMode.Mission)
         {
             missionTime -= Time.deltaTime;
@@ -42,24 +46,44 @@ public class GameModeHandler : MonoBehaviour
             if (missionTimerText != null)
                 missionTimerText.text = "Time: " + Mathf.Ceil(missionTime).ToString();
 
-            if (missionTime <= 0)
+
+            if (missionTime <= 1 &&!hasWon)
             {
-                Time.timeScale = 0f;
-
-                if (missionUI != null)
-                    missionUI.SetActive(false);
-
-                if (victoryCanvas != null)
-                    victoryCanvas.SetActive(true);
-
-                if (clapAudio != null)
-                    clapAudio.Play();
-
+                hasWon = true;
+                StartCoroutine(HandleVictory());   
 
                 Debug.Log("🎉 Mission Complete! Victory Canvas shown.");
+
             }
         }
     }
+    IEnumerator HandleVictory()
+{
+    GameObject player = GameObject.FindGameObjectWithTag("Player");
+if (player != null)
+    player.SetActive(false);
+
+    if (clapAudio != null)
+    {
+    clapAudio.PlayOneShot(clapAudio.clip);
+        Debug.Log("🔊 Clap Audio Played");
+    }
+    Debug.Log("🏁 HandleVictory() Started");
+
+    if (missionUI != null)
+        missionUI.SetActive(false);
+
+    if (victoryCanvas != null)
+        victoryCanvas.SetActive(true);
+
+
+    // ننتظر عشان يشتغل الصوت كامل
+    yield return new WaitForSecondsRealtime(5f);
+
+    // نوقف اللعبة بعد الصوت
+    Debug.Log("🛑 Game Paused");
+}
+
 
     void SetEasyMode()
     {
@@ -81,4 +105,5 @@ public class GameModeHandler : MonoBehaviour
         if (missionUI != null) missionUI.SetActive(true);
         if (victoryCanvas != null) victoryCanvas.SetActive(false);
     }
+
 }

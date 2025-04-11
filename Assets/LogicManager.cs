@@ -9,6 +9,8 @@ public class LogicManager : MonoBehaviour
     public Text Textscore;
     public GameObject gameOverScreen;
     public AudioSource loseAudio;
+    public AudioSource winAudio;  // حقل جديد
+
 
     [ContextMenu("addScore")]
     public void addScore(int scoreToAdd)
