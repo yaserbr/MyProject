@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro; // إذا تستخدم TextMeshPro
 
+
+
 public class GameModeHandler : MonoBehaviour
 {
     public GameObject missionUI;
@@ -10,6 +12,8 @@ public class GameModeHandler : MonoBehaviour
     public float missionTime = 20f;
 
     public GameObject victoryCanvas;
+
+    public AudioSource clapAudio;
 
     void Start()
     {
@@ -47,6 +51,10 @@ public class GameModeHandler : MonoBehaviour
 
                 if (victoryCanvas != null)
                     victoryCanvas.SetActive(true);
+
+                if (clapAudio != null)
+                    clapAudio.Play();
+
 
                 Debug.Log("🎉 Mission Complete! Victory Canvas shown.");
             }

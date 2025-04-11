@@ -10,10 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4963220690281978756}
   - component: {fileID: 6053545169359199289}
-<<<<<<< HEAD
   - component: {fileID: 1434553965127396520}
-=======
->>>>>>> 81ff3eac189a0dddcb4a052e8d2228c36c2e2f7d
   m_Layer: 0
   m_Name: 'Top Pipe '
   m_TagString: Untagged
@@ -91,7 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
 --- !u!61 &1434553965127396520
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -138,8 +134,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.5931416, y: 15.003195}
   m_EdgeRadius: 0
-=======
->>>>>>> 81ff3eac189a0dddcb4a052e8d2228c36c2e2f7d
 --- !u!1 &3337711935378839474
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,6 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 256971900036035772}
   - component: {fileID: 4858817533883078869}
+  - component: {fileID: 9131565892713185968}
   m_Layer: 0
   m_Name: Pipe
   m_TagString: Untagged
@@ -172,10 +167,7 @@ Transform:
   m_Children:
   - {fileID: 4048742250394529411}
   - {fileID: 4963220690281978756}
-<<<<<<< HEAD
   - {fileID: 1164552170847891621}
-=======
->>>>>>> 81ff3eac189a0dddcb4a052e8d2228c36c2e2f7d
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4858817533883078869
@@ -190,8 +182,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8c656938e715e44bfa9bfbafe98774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 2
-<<<<<<< HEAD
+  moveSpeed: 0
+--- !u!114 &9131565892713185968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3337711935378839474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65faec23b4bb55f4281d33a3eb8ddb7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topPipe: {fileID: 4963220690281978756}
+  bottomPipe: {fileID: 4048742250394529411}
 --- !u!1 &3663062792654498811
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,8 +289,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logic: {fileID: 0}
-=======
->>>>>>> 81ff3eac189a0dddcb4a052e8d2228c36c2e2f7d
 --- !u!1 &5407160564534675563
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,10 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4048742250394529411}
   - component: {fileID: 4489834678407633704}
-<<<<<<< HEAD
   - component: {fileID: 2268369696001681192}
-=======
->>>>>>> 81ff3eac189a0dddcb4a052e8d2228c36c2e2f7d
   m_Layer: 0
   m_Name: Bottom Pipe
   m_TagString: Untagged
@@ -377,7 +377,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
 --- !u!61 &2268369696001681192
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -424,5 +423,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.5931416, y: 15.003195}
   m_EdgeRadius: 0
-=======
->>>>>>> 81ff3eac189a0dddcb4a052e8d2228c36c2e2f7d

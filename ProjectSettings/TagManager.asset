@@ -2,23 +2,13 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-<<<<<<< HEAD
   serializedVersion: 3
-  tags:
-  - Logic
-=======
-  serializedVersion: 2
   tags: []
->>>>>>> 81ff3eac189a0dddcb4a052e8d2228c36c2e2f7d
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-<<<<<<< HEAD
-  - Rocket
-=======
   - 
->>>>>>> 81ff3eac189a0dddcb4a052e8d2228c36c2e2f7d
   - Water
   - UI
   - 
@@ -51,8 +41,5 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< HEAD
   m_RenderingLayers:
   - Default
-=======
->>>>>>> 81ff3eac189a0dddcb4a052e8d2228c36c2e2f7d
