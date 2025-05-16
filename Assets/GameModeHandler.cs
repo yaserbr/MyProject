@@ -47,7 +47,7 @@ public class GameModeHandler : MonoBehaviour
                 missionTimerText.text = "Time: " + Mathf.Ceil(missionTime).ToString();
 
 
-            if (missionTime <= 1 &&!hasWon)
+            if (missionTime <= 0 &&!hasWon)
             {
                 hasWon = true;
                 StartCoroutine(HandleVictory());   
@@ -83,6 +83,7 @@ if (player != null)
     // نوقف اللعبة بعد الصوت
     Debug.Log("🛑 Game Paused");
 }
+
 
 
     void SetEasyMode()
